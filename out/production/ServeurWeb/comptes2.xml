@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<compte xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/Users/Formation.M2I-JAV5-04/Desktop/Intellij/soap/compte3.xsd">
+	<code>1</code>
+	<dateCreation>2018-04-11T15:32:51.928+02:00</dateCreation>
+	<solde>7.0</solde>
+</compte>

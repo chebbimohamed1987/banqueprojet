@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws" xmlns:intf="http://ws" xmlns:tns1="http://entities" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://entities"/>
+   <element name="code" type="xsd:long"/>
+   <element name="getCompteReturn" type="tns1:Compte"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getComptesReturn" type="impl:ArrayOf_xsd_anyType"/>
+   <element name="solde" type="xsd:float"/>
+   <element name="compte" type="tns1:Compte"/>
+   <element name="cptes" type="impl:ArrayOf_xsd_anyType"/>
+   <element name="soldes" type="xsd:string"/>
+   <element name="mt" type="xsd:double"/>
+   <element name="conversionReturn" type="xsd:double"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://entities" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://ws"/>
+   <complexType name="Compte">
+    <sequence>
+     <element name="code" nillable="true" type="xsd:long"/>
+     <element name="dateCreation" nillable="true" type="xsd:dateTime"/>
+     <element name="solde" type="xsd:float"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getCompteResponse">
+
+      <wsdl:part element="impl:getCompteReturn" name="getCompteReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getComptesRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="conversionRequest">
+
+      <wsdl:part element="impl:mt" name="mt"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getComptesResponse">
+
+      <wsdl:part element="impl:getComptesReturn" name="getComptesReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addComptesResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getCompteRequest">
+
+      <wsdl:part element="impl:code" name="code"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCompte2Response">
+
+   </wsdl:message>
+
+   <wsdl:message name="addComptesRequest">
+
+      <wsdl:part element="impl:soldes" name="soldes"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="conversionResponse">
+
+      <wsdl:part element="impl:conversionReturn" name="conversionReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCompteResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="addCompte2Request">
+
+      <wsdl:part element="impl:compte" name="compte"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addCompteRequest">
+
+      <wsdl:part element="impl:solde" name="solde"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addComptes2Request">
+
+      <wsdl:part element="impl:cptes" name="cptes"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addComptes2Response">
+
+   </wsdl:message>
+
+   <wsdl:portType name="BanqueService">
+
+      <wsdl:operation name="getCompte" parameterOrder="code">
+
+         <wsdl:input message="impl:getCompteRequest" name="getCompteRequest"/>
+
+         <wsdl:output message="impl:getCompteResponse" name="getCompteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getComptes">
+
+         <wsdl:input message="impl:getComptesRequest" name="getComptesRequest"/>
+
+         <wsdl:output message="impl:getComptesResponse" name="getComptesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCompte" parameterOrder="solde">
+
+         <wsdl:input message="impl:addCompteRequest" name="addCompteRequest"/>
+
+         <wsdl:output message="impl:addCompteResponse" name="addCompteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCompte2" parameterOrder="compte">
+
+         <wsdl:input message="impl:addCompte2Request" name="addCompte2Request"/>
+
+         <wsdl:output message="impl:addCompte2Response" name="addCompte2Response"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addComptes2" parameterOrder="cptes">
+
+         <wsdl:input message="impl:addComptes2Request" name="addComptes2Request"/>
+
+         <wsdl:output message="impl:addComptes2Response" name="addComptes2Response"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addComptes" parameterOrder="soldes">
+
+         <wsdl:input message="impl:addComptesRequest" name="addComptesRequest"/>
+
+         <wsdl:output message="impl:addComptesResponse" name="addComptesResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="conversion" parameterOrder="mt">
+
+         <wsdl:input message="impl:conversionRequest" name="conversionRequest"/>
+
+         <wsdl:output message="impl:conversionResponse" name="conversionResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BanqueServiceSoapBinding" type="impl:BanqueService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getCompte">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCompteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCompteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getComptes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getComptesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getComptesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCompte">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addCompteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addCompteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCompte2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addCompte2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addCompte2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addComptes2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addComptes2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addComptes2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addComptes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addComptesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addComptesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="conversion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="conversionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="conversionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BanqueServiceService">
+
+      <wsdl:port binding="impl:BanqueServiceSoapBinding" name="BanqueService">
+
+         <wsdlsoap:address location="http://localhost:8081//ws/BanqueService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

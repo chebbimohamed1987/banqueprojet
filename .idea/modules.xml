@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Serveur/BanqueRS/BanqueRS.iml" filepath="$PROJECT_DIR$/Serveur/BanqueRS/BanqueRS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serveur/BanqueService/BanqueService.iml" filepath="$PROJECT_DIR$/Serveur/BanqueService/BanqueService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serveur/BanqueWs/BanqueWs.iml" filepath="$PROJECT_DIR$/Serveur/BanqueWs/BanqueWs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serveur/BanqueWs/BanqueWs.iml" filepath="$PROJECT_DIR$/Serveur/BanqueWs/BanqueWs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serveur/ClientWS/ClientWS.iml" filepath="$PROJECT_DIR$/Serveur/ClientWS/ClientWS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serveur/ServeurWeb/ServeurWeb.iml" filepath="$PROJECT_DIR$/Serveur/ServeurWeb/ServeurWeb.iml" />
+    </modules>
+  </component>
+</project>

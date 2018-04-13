@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/saaj.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/commons-logging-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/commons-discovery-0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/jaxrpc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/log4j-1.2.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/wsdl4j-1.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Serveur/BanqueService/lib/axis.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
